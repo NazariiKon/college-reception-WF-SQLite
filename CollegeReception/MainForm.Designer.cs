@@ -46,7 +46,7 @@
             addButton.ForeColor = Color.White;
             addButton.Location = new Point(14, 57);
             addButton.Name = "addButton";
-            addButton.Size = new Size(1002, 50);
+            addButton.Size = new Size(1304, 50);
             addButton.TabIndex = 5;
             addButton.Text = "Додати випускника";
             addButton.UseVisualStyleBackColor = false;
@@ -59,9 +59,9 @@
             searchButton.FlatStyle = FlatStyle.Flat;
             searchButton.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             searchButton.ForeColor = Color.White;
-            searchButton.Location = new Point(914, 12);
+            searchButton.Location = new Point(1120, 9);
             searchButton.Name = "searchButton";
-            searchButton.Size = new Size(102, 42);
+            searchButton.Size = new Size(198, 42);
             searchButton.TabIndex = 6;
             searchButton.Text = "Знайти";
             searchButton.UseVisualStyleBackColor = false;
@@ -69,26 +69,26 @@
             // 
             // studentsDataGridView
             // 
-            studentsDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            studentsDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
+            studentsDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            studentsDataGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             studentsDataGridView.BackgroundColor = SystemColors.Control;
             studentsDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             studentsDataGridView.Location = new Point(14, 113);
             studentsDataGridView.Name = "studentsDataGridView";
-            studentsDataGridView.ReadOnly = true;
             studentsDataGridView.RowHeadersWidth = 51;
             studentsDataGridView.RowTemplate.Height = 29;
-            studentsDataGridView.Size = new Size(1002, 379);
+            studentsDataGridView.Size = new Size(1304, 608);
             studentsDataGridView.TabIndex = 7;
+            studentsDataGridView.DoubleClick += studentsDataGridView_DoubleClick;
             // 
             // searchBoxWrapper
             // 
             searchBoxWrapper.BackColor = Color.White;
             searchBoxWrapper.BorderStyle = BorderStyle.FixedSingle;
             searchBoxWrapper.Controls.Add(searchBox);
-            searchBoxWrapper.Location = new Point(14, 14);
+            searchBoxWrapper.Location = new Point(14, 9);
             searchBoxWrapper.Name = "searchBoxWrapper";
-            searchBoxWrapper.Size = new Size(894, 40);
+            searchBoxWrapper.Size = new Size(1100, 40);
             searchBoxWrapper.TabIndex = 8;
             // 
             // searchBox
@@ -102,14 +102,14 @@
             searchBox.Location = new Point(12, 5);
             searchBox.Margin = new Padding(0);
             searchBox.Name = "searchBox";
-            searchBox.Size = new Size(869, 27);
+            searchBox.Size = new Size(1072, 27);
             searchBox.TabIndex = 0;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1028, 504);
+            ClientSize = new Size(1330, 733);
             Controls.Add(searchBoxWrapper);
             Controls.Add(studentsDataGridView);
             Controls.Add(addButton);

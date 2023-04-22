@@ -20,6 +20,7 @@ namespace CollegeReception.Data
         public string GraduationDate { get; set; }
         public string Award { get; set; } = "Немає";
         public long SpecialityId { get; set; }
+        public string Info { get; set; }
     }
 
 }

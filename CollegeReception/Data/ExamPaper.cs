@@ -6,15 +6,10 @@ using System.Threading.Tasks;
 
 namespace CollegeReception.Data
 {
-    public class Speciality
+    internal class ExamPaper
     {
-        public Speciality()
-        {
-            
-        }
-
         public long Id { get; set; }
-        public string Name { get; set; }
-        public string ShortName { get; set; }
+        public long SpecialityId { get; set; }
+        public long StudentId { get; set; }
     }
 }
