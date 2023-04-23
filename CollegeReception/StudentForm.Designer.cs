@@ -41,13 +41,17 @@
             yearTextBox = new TextBox();
             specialityTextBox = new TextBox();
             label3 = new Label();
-            listBoxAssessments = new ListBox();
-            label4 = new Label();
+            listBoxExam = new ListBox();
             groupTextBox = new TextBox();
             label5 = new Label();
             label6 = new Label();
             textBoxId = new TextBox();
             label7 = new Label();
+            textBoxAssesment = new TextBox();
+            label8 = new Label();
+            textBoxExamDate = new TextBox();
+            label9 = new Label();
+            buttonSave = new Button();
             SuspendLayout();
             // 
             // label2
@@ -62,7 +66,6 @@
             // 
             awardTextBox.Location = new Point(132, 144);
             awardTextBox.Name = "awardTextBox";
-            awardTextBox.ReadOnly = true;
             awardTextBox.Size = new Size(284, 27);
             awardTextBox.TabIndex = 45;
             // 
@@ -78,7 +81,6 @@
             // 
             educationTextBox.Location = new Point(132, 78);
             educationTextBox.Name = "educationTextBox";
-            educationTextBox.ReadOnly = true;
             educationTextBox.Size = new Size(284, 27);
             educationTextBox.TabIndex = 3;
             // 
@@ -94,7 +96,6 @@
             // 
             nameTextBox.Location = new Point(132, 12);
             nameTextBox.Name = "nameTextBox";
-            nameTextBox.ReadOnly = true;
             nameTextBox.Size = new Size(284, 27);
             nameTextBox.TabIndex = 1;
             // 
@@ -110,7 +111,6 @@
             // 
             passIdTextBox.Location = new Point(132, 45);
             passIdTextBox.Name = "passIdTextBox";
-            passIdTextBox.ReadOnly = true;
             passIdTextBox.Size = new Size(284, 27);
             passIdTextBox.TabIndex = 2;
             // 
@@ -124,7 +124,7 @@
             // 
             // groupLabel
             // 
-            groupLabel.Location = new Point(11, 180);
+            groupLabel.Location = new Point(13, 181);
             groupLabel.Name = "groupLabel";
             groupLabel.Size = new Size(113, 23);
             groupLabel.TabIndex = 40;
@@ -134,7 +134,6 @@
             // 
             yearTextBox.Location = new Point(132, 110);
             yearTextBox.Name = "yearTextBox";
-            yearTextBox.ReadOnly = true;
             yearTextBox.Size = new Size(284, 27);
             yearTextBox.TabIndex = 46;
             // 
@@ -142,7 +141,6 @@
             // 
             specialityTextBox.Location = new Point(132, 177);
             specialityTextBox.Name = "specialityTextBox";
-            specialityTextBox.ReadOnly = true;
             specialityTextBox.Size = new Size(284, 27);
             specialityTextBox.TabIndex = 47;
             // 
@@ -152,31 +150,23 @@
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label3.Location = new Point(422, 8);
             label3.Name = "label3";
-            label3.Size = new Size(78, 28);
+            label3.Size = new Size(99, 28);
             label3.TabIndex = 48;
-            label3.Text = "Оцінки";
+            label3.Text = "Екзамени";
             // 
-            // listBoxAssessments
+            // listBoxExam
             // 
-            listBoxAssessments.FormattingEnabled = true;
-            listBoxAssessments.ItemHeight = 20;
-            listBoxAssessments.Location = new Point(422, 39);
-            listBoxAssessments.Name = "listBoxAssessments";
-            listBoxAssessments.Size = new Size(366, 164);
-            listBoxAssessments.TabIndex = 49;
-            // 
-            // label4
-            // 
-            label4.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(422, 438);
-            label4.Name = "label4";
-            label4.Size = new Size(366, 40);
-            label4.TabIndex = 50;
-            label4.Text = "НЕ ЗАРАХОВАНИЙ";
+            listBoxExam.FormattingEnabled = true;
+            listBoxExam.ItemHeight = 20;
+            listBoxExam.Location = new Point(422, 39);
+            listBoxExam.Name = "listBoxExam";
+            listBoxExam.Size = new Size(366, 164);
+            listBoxExam.TabIndex = 49;
+            listBoxExam.SelectedIndexChanged += listBoxExam_SelectedIndexChanged;
             // 
             // groupTextBox
             // 
-            groupTextBox.Location = new Point(132, 271);
+            groupTextBox.Location = new Point(132, 293);
             groupTextBox.Name = "groupTextBox";
             groupTextBox.ReadOnly = true;
             groupTextBox.Size = new Size(284, 27);
@@ -184,7 +174,7 @@
             // 
             // label5
             // 
-            label5.Location = new Point(11, 274);
+            label5.Location = new Point(13, 296);
             label5.Name = "label5";
             label5.Size = new Size(113, 23);
             label5.TabIndex = 51;
@@ -194,7 +184,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(13, 207);
+            label6.Location = new Point(11, 216);
             label6.Name = "label6";
             label6.Size = new Size(207, 28);
             label6.TabIndex = 53;
@@ -202,7 +192,7 @@
             // 
             // textBoxId
             // 
-            textBoxId.Location = new Point(132, 238);
+            textBoxId.Location = new Point(132, 260);
             textBoxId.Name = "textBoxId";
             textBoxId.ReadOnly = true;
             textBoxId.Size = new Size(284, 27);
@@ -210,24 +200,70 @@
             // 
             // label7
             // 
-            label7.Location = new Point(11, 241);
+            label7.Location = new Point(13, 263);
             label7.Name = "label7";
             label7.Size = new Size(113, 23);
             label7.TabIndex = 54;
             label7.Text = "Номер:";
+            // 
+            // textBoxAssesment
+            // 
+            textBoxAssesment.Location = new Point(488, 209);
+            textBoxAssesment.Name = "textBoxAssesment";
+            textBoxAssesment.Size = new Size(300, 27);
+            textBoxAssesment.TabIndex = 57;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(422, 212);
+            label8.Name = "label8";
+            label8.Size = new Size(60, 20);
+            label8.TabIndex = 56;
+            label8.Text = "Оцінка:";
+            // 
+            // textBoxExamDate
+            // 
+            textBoxExamDate.Location = new Point(488, 242);
+            textBoxExamDate.Name = "textBoxExamDate";
+            textBoxExamDate.ReadOnly = true;
+            textBoxExamDate.Size = new Size(300, 27);
+            textBoxExamDate.TabIndex = 59;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(422, 245);
+            label9.Name = "label9";
+            label9.Size = new Size(44, 20);
+            label9.TabIndex = 58;
+            label9.Text = "Дата:";
+            // 
+            // buttonSave
+            // 
+            buttonSave.Location = new Point(13, 432);
+            buttonSave.Name = "buttonSave";
+            buttonSave.Size = new Size(775, 43);
+            buttonSave.TabIndex = 60;
+            buttonSave.Text = "Зберегти";
+            buttonSave.UseVisualStyleBackColor = true;
             // 
             // StudentForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 487);
+            Controls.Add(buttonSave);
+            Controls.Add(textBoxExamDate);
+            Controls.Add(label9);
+            Controls.Add(textBoxAssesment);
+            Controls.Add(label8);
             Controls.Add(textBoxId);
             Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(groupTextBox);
             Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(listBoxAssessments);
+            Controls.Add(listBoxExam);
             Controls.Add(label3);
             Controls.Add(specialityTextBox);
             Controls.Add(yearTextBox);
@@ -262,12 +298,17 @@
         private TextBox yearTextBox;
         private TextBox specialityTextBox;
         private Label label3;
-        private ListBox listBoxAssessments;
+        private ListBox listBoxExam;
         private Label label4;
         private TextBox groupTextBox;
         private Label label5;
         private Label label6;
         private TextBox textBoxId;
         private Label label7;
+        private TextBox textBoxAssesment;
+        private Label label8;
+        private TextBox textBoxExamDate;
+        private Label label9;
+        private Button buttonSave;
     }
 }
