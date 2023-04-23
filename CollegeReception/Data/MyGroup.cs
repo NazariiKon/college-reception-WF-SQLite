@@ -1,4 +1,4 @@
-﻿namespace CollegeReception
+﻿namespace CollegeReception.Data
 {
     internal class MyGroup
     {

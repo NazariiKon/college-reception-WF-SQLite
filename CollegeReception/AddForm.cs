@@ -41,7 +41,7 @@ namespace CollegeReception
                 "(full_name, pass_number, last_educational, graduation_date, award, speciality_id) " +
                 "VALUES(@full_name, @pass_number, @last_educational, @graduation_date, @award, @speciality_id);";
             SQLiteReaderHelper.Request(query, name, pass, educational, year, award, speciality.Id);
-            MessageBox.Show("Студент доданий!");
+            MessageBox.Show("Student created!");
         }
     }
 }

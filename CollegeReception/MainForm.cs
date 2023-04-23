@@ -1,4 +1,4 @@
-using System.Data.SQLite;
+п»їusing System.Data.SQLite;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
@@ -32,13 +32,13 @@ namespace CollegeReception
 
         private void setupGrid()
         {
-            studentsDataGridView.Columns[0].HeaderText = "№";
-            studentsDataGridView.Columns[1].HeaderText = "ФІО";
-            studentsDataGridView.Columns[2].HeaderText = "Спеціальність";
-            studentsDataGridView.Columns[3].HeaderText = "Паспорт";
-            studentsDataGridView.Columns[4].HeaderText = "Вчився в";
-            studentsDataGridView.Columns[5].HeaderText = "Закінчив в";
-            studentsDataGridView.Columns[6].HeaderText = "Нагороди";
+            studentsDataGridView.Columns[0].HeaderText = "Id";
+            studentsDataGridView.Columns[1].HeaderText = "Name";
+            studentsDataGridView.Columns[2].HeaderText = "Major";
+            studentsDataGridView.Columns[3].HeaderText = "Passport Number";
+            studentsDataGridView.Columns[4].HeaderText = "College";
+            studentsDataGridView.Columns[5].HeaderText = "Graduation Date";
+            studentsDataGridView.Columns[6].HeaderText = "Award";
         }
 
         private void addButton_Click(object sender, EventArgs e)
@@ -90,7 +90,7 @@ namespace CollegeReception
                 string graduationDate = selectedRow.Cells[5].Value.ToString();
                 string award = selectedRow.Cells[6].Value.ToString();
 
-                // создаем новый объект класса Student и присваиваем ему значения из выбранной строки
+                // Г±Г®Г§Г¤Г ГҐГ¬ Г­Г®ГўГ»Г© Г®ГЎГєГҐГЄГІ ГЄГ«Г Г±Г±Г  Student ГЁ ГЇГ°ГЁГ±ГўГ ГЁГўГ ГҐГ¬ ГҐГ¬Гі Г§Г­Г Г·ГҐГ­ГЁГї ГЁГ§ ГўГ»ГЎГ°Г Г­Г­Г®Г© Г±ГІГ°Г®ГЄГЁ
                 Student selectedStudent = new Student
                 {
                     Id = id,

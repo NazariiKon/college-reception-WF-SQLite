@@ -50,7 +50,7 @@
             nameLabel.Name = "nameLabel";
             nameLabel.Size = new Size(113, 23);
             nameLabel.TabIndex = 15;
-            nameLabel.Text = "П.І.Б:";
+            nameLabel.Text = "Name:";
             // 
             // nameTextBox
             // 
@@ -65,7 +65,7 @@
             passIdLabel.Name = "passIdLabel";
             passIdLabel.Size = new Size(113, 23);
             passIdLabel.TabIndex = 19;
-            passIdLabel.Text = "Паспорт:";
+            passIdLabel.Text = "Passport:";
             // 
             // passIdTextBox
             // 
@@ -80,7 +80,7 @@
             yearGraduationLabel.Name = "yearGraduationLabel";
             yearGraduationLabel.Size = new Size(113, 23);
             yearGraduationLabel.TabIndex = 21;
-            yearGraduationLabel.Text = "Рік випуска:";
+            yearGraduationLabel.Text = "Grad. Year:";
             // 
             // yearGraduationNumericUpDown
             // 
@@ -98,7 +98,7 @@
             groupLabel.Name = "groupLabel";
             groupLabel.Size = new Size(113, 23);
             groupLabel.TabIndex = 27;
-            groupLabel.Text = "Спеціальність:";
+            groupLabel.Text = "Major:";
             // 
             // specialityComboBox
             // 
@@ -113,7 +113,7 @@
             addButton.Name = "addButton";
             addButton.Size = new Size(403, 36);
             addButton.TabIndex = 29;
-            addButton.Text = "Додати";
+            addButton.Text = "Add";
             addButton.Click += addButton_Click;
             // 
             // label1
@@ -122,7 +122,7 @@
             label1.Name = "label1";
             label1.Size = new Size(113, 23);
             label1.TabIndex = 30;
-            label1.Text = "Вчився в:";
+            label1.Text = "College:";
             // 
             // educationTextBox
             // 
@@ -137,7 +137,7 @@
             label2.Name = "label2";
             label2.Size = new Size(113, 23);
             label2.TabIndex = 32;
-            label2.Text = "Нагороди:";
+            label2.Text = "Awards:";
             // 
             // awardTextBox
             // 
@@ -165,7 +165,7 @@
             Controls.Add(specialityComboBox);
             Controls.Add(addButton);
             Name = "AddForm";
-            Text = "Додавання абітурієнта";
+            Text = "Add new student";
             ((System.ComponentModel.ISupportInitialize)yearGraduationNumericUpDown).EndInit();
             ResumeLayout(false);
             PerformLayout();

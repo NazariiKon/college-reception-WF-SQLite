@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SQLite;
-using System.Linq;
+﻿using System.Data.SQLite;
 using System.Reflection;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace CollegeReception
 {
@@ -44,7 +39,7 @@ namespace CollegeReception
             SQLiteCommand command = new SQLiteCommand(query, _con);
             if (args.Length > 0)
             {
-                string pattern = @"@\w+"; // регулярное выражение для поиска всех слов, начинающихся с "@"
+                string pattern = @"@\w+"; 
                 MatchCollection matches = Regex.Matches(query, pattern);
                 string[] paramNames = new string[matches.Count];
                 for (int i = 0; i < matches.Count; i++)
@@ -57,7 +52,7 @@ namespace CollegeReception
             }
             SQLiteDataReader reader = command.ExecuteReader();
 
-            if (reader.HasRows) // если есть данные
+            if (reader.HasRows)
             {
                 return reader;
             }
